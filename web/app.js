@@ -17,6 +17,7 @@ let selectedBetIndex = 0;
 let betButtons = [];
 let decreaseHoldTimer = null;
 let decreaseHoldInterval = null;
+let decreaseHoldActivated = false;
 
 function setOutput(text) {
   elements.output.textContent = text;
@@ -104,15 +105,18 @@ function clearDecreaseHold() {
     window.clearInterval(decreaseHoldInterval);
     decreaseHoldInterval = null;
   }
+  decreaseHoldActivated = false;
 }
 
 function startDecreaseHold() {
   if (!sim) {
     return;
   }
-  performDecrease();
   clearDecreaseHold();
+  decreaseHoldActivated = false;
   decreaseHoldTimer = window.setTimeout(() => {
+    decreaseHoldActivated = true;
+    performDecrease();
     decreaseHoldInterval = window.setInterval(performDecrease, 140);
   }, 350);
 }
@@ -121,7 +125,7 @@ elements.decreaseWager.addEventListener("click", () => {
   if (!sim) {
     return;
   }
-  if (decreaseHoldInterval || decreaseHoldTimer) {
+  if (decreaseHoldActivated) {
     return;
   }
   performDecrease();
