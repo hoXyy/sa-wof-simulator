@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter",
+    "SF Pro Text",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: #0b0f15;
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px 24px 64px;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.panel {
+  background: #0f1622;
+  border: 1px solid #1f2a37;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #293244;
+  background: #0b1220;
+  color: inherit;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #2b3a52;
+  background: #1f3a66;
+  color: #f8fafc;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    border-color 0.12s ease,
+    background 0.12s ease;
+}
+
+button:disabled {
+  background: #3b475b;
+  cursor: not-allowed;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #b9c4d6;
+}
+
+.bet-table {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.bet-spot {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #2b3a52;
+  background: #1f2a37;
+  color: #f8fafc;
+  text-align: left;
+  min-height: 96px;
+  transition:
+    transform 0.08s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.bet-spot .bet-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a7c0ff;
+}
+
+.bet-spot .bet-value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.bet-spot.is-selected {
+  border-color: #f3a533;
+  box-shadow:
+    0 0 0 2px rgba(243, 165, 51, 0.3),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+pre {
+  background: #0b1220;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #1f2a37;
+  white-space: pre-wrap;
+  min-height: 160px;
+}

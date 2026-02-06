@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wheel of Fortune Simulator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Wheel of Fortune Simulator</h1>
+
+      <section class="panel">
+        <h2>Initialize</h2>
+        <div class="grid">
+          <label>
+            Initial debt
+            <input id="playerCash" type="number" value="-1001" />
+          </label>
+          <label>
+            Debt limit (depends on gambling skill)
+            <input id="casinoCredit" type="number" value="1000" />
+          </label>
+          <label>
+            Max wager (depends on which table you select)
+            <input id="maxWager" type="number" value="100" />
+          </label>
+        </div>
+        <button id="createSim">Create simulator</button>
+      </section>
+
+      <section class="panel">
+        <h2>Wagers</h2>
+        <div class="table">
+          <div class="table-header">
+            <span>Pick a bet spot</span>
+            <span id="selectedBetLabel">Selected: Bet 0</span>
+          </div>
+          <div id="betTable" class="bet-table" aria-label="Betting table"></div>
+        </div>
+        <div class="controls">
+          <button id="increaseWager" disabled>Increase wager</button>
+          <button id="decreaseWager" disabled>Decrease wager</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Output</h2>
+        <pre id="output">Loading WASM...</pre>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
